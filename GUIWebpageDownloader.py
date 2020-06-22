@@ -29,6 +29,7 @@ def download_url():
             path = directory_folder+directory+"/"+file_name #create the path for the file to be saved
         else:
             path = directory_folder+file_name
+        os.makedirs(directory_folder, exist_ok=True)
         with open(path, "w", encoding="UTF-8") as file: #create and open the file with write permissions
             file.write(html) #write the html to the file (or what ever it is, image, etc..)
         status_str += "\n" + "Saved As: " + path
